@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+            list-style: none;
+        }
+        #banner{
+            width:1226px;
+            height:460px;
+            border:1px solid red;
+            margin:0 auto;
+            position:relative;
+        }
+        #imageBox{
+            width:1226px;
+            height:460px;
+        }
+        #imageBox >li{
+            width:1226px;
+            height:460px;
+            position: absolute;
+            left:0;
+            top:0;
+            transition: all 0.8s;  /*动画效果*/
+            opacity: 0.6;
+        }
+        #imageBox>li.active{
+            z-index: 1;
+            opacity: 1;
+        }
+        #imageBox>li>a{
+            display: block;
+            width: 1226px;
+            height:460px;
+        }
+        #imageBox>li>a>img{
+            width: 1226px;
+            height:460px;
+            display:block;
+        }
+
+        #pagerBox{
+            width:100px;
+            height:10px;
+            position: absolute;
+            right:50px;
+            bottom:20px;
+            z-index: 999;
+            display: flex;
+            justify-content: space-between;
+        }
+        #pagerBox>li{
+            width:6px;
+            height:6px;
+            background: #333;
+            border:2px solid #666;
+            border-radius:50%;
+        }
+        #pagerBox>li.active{
+            border:2px solid #333;
+            background: #aaa;
+        }
+    </style>
+</head>
+<body>
+<div id="banner">
+    <ul id="imageBox">
+        <li><a href=""><img src="img/0.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/1.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/2.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/3.jpg" alt=""></a></li>
+        <li><a href=""><img src="img/4.jpg" alt=""></a></li>
+    </ul>
+    <ul id="pagerBox">
+        <li class="active"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<script>
+    let pagers=document.querySelectorAll("#pagerBox>li");
+    console.log(pagers);
+    let images=document.querySelectorAll("#imageBox>li");
+    console.log(images);
+    let banner=document.querySelectorAll("#banner");
+    pagers.forEach(function (ele,index) {
+        ele.onclick=function () {
+            flag=true;
+            for (let i=0;i<images.length;i++){
+                images[i].classList.remove("active");
+                pagers[i].classList.remove("active");
+            }
+            images[index].classList.add("active");
+            console.log(images[index]);
+            pagers[index].classList.add("active");
+        }
+    });
+    let now=0;
+    function move(){
+        now++;
+        if (now===images.length){
+            now=0;                 //判断now的大小
+        }
+        for (let i=0;i<images.length;i++){
+            images[i].classList.remove("active");  //移除images的类名
+            pagers[i].classList.remove("active");
+        }
+        images[now].classList.add("active");       //添加images的类名
+        pagers[now].classList.add("active");
+    }
+    let st=setInterval(move,3000);
+    banner.onmouseenter=function(){
+        clearInterval(st);
+    };
+    banner.onmouseleave=function () {
+      if (flag){
+          return ;
+      }
+      st=setInterval(move,3000);
+    };
+
+</script>
+</body>
+</html>

@@ -1,0 +1,1235 @@
+/*清除浏览器默认样式*/
+*{/*通用选择器*/
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body{
+    background: white;
+}
+/*清除文字下划线*/
+a{/*标签选择器*/
+    text-decoration: none;
+}
+/*小米首页顶部导航开始*/
+ .mi-header{/*类名选择器*/
+     width: 100%;
+     height: 40px;
+     background: #333;
+ }
+ .header-content{
+     width: 1226px;
+     height: 100%;
+     margin: 0 auto;
+ }
+ .header-nav{
+     width: 790px;
+     height: 100%;
+     float:left;
+     font-size: 12px;
+     line-height: 40px;
+ }
+ .header-car{
+     width: 280px;
+     height: 100%;
+     float: right;
+     font-size: 12px;/*字体大小*/
+     line-height: 40px;/*行高*/
+ }
+ /*后代选择器*/
+.header-nav a{
+    color: #b0b0b0;
+    /*font-size: 12px;
+    line-height: 40px;*/
+    cursor: pointer;
+}
+.header-nav a:hover{
+    color:#fff;
+}
+.header-nav span{
+    color: #424242;
+    margin: 0 3px;/*外边距*/
+}
+.header-car a{
+    color: #b0b0b0;
+}
+.header-car span{
+    color: #424242;
+    margin: 0 3px;
+}
+#car{/*id选择器*/
+    display:block;/*转化为块标签*/
+    width: 120px;
+    height: 100%;
+    background: #424242;
+    float: right;/*右浮动*/
+    text-align: center;/*文字位置*/
+}
+/*小米首页顶部导航结束*/
+/*小米首页搜索部分开始*/
+.search-box{
+    width: 100%;
+    height: 100px;
+}
+.container{
+    width: 1226px;
+}
+.search{
+    height: 100%;
+    margin:0 auto;
+}
+.search-img{
+    width: 55px;
+    height: 55px;
+    margin-top:22.5px;/*给子元素设置margin-top会将父元素一起带下来--传说中的倒霉孩子*/
+    float:left;
+}
+.search-img img{
+    width: 100%;
+    height: 100%;
+}
+.search-list{
+    width:850px;
+    height: 100%;
+    float: left;
+    padding-left: 140px;/*会撑大盒子*/
+    box-sizing: border-box;/*解决撑大盒子问题:给盒子添加属性*/
+
+}
+.search-input{
+    width:295px;
+    height: 50px;
+    float: right;
+    line-height:50px;
+    margin-top: 25px;/*外边距-上*/
+
+}
+.search-item{
+    color: #333;
+    font-size: 15px;
+    line-height: 100px;
+    cursor:pointer;/*将鼠标移入的样式改变，变改成手*/
+    float:left;
+    padding:0 15px;/*内填充：上下，左右*/
+}
+.item-detail{
+    width: 100%;
+    height: 0;
+    background: white;
+    position:absolute;/*绝对定位*/
+    left:0;           /*绝对定位*/
+    top:140px;       /*绝对定位*/
+    transition:all 0.5s linear;/*添加动画效果*/
+    z-index:999;/*定位元素之间存在层级关系，z-index用来调整层级*/
+}
+.search-item:hover .item-detail{/*鼠标移入时，显示下拉*/
+    height: 240px;
+}
+/*鼠标移入时改变字体颜色*/
+.search-item:hover{
+    color: #ff6700;
+}
+.search-input input{
+    width: 244px;
+    height: 53px;
+    border:1px solid #e0e0e0;/*border边框:边框宽度 边框样式(实线) 边框颜色*/
+    box-sizing:border-box;/*解决盒子撑大的问题,给盒子添加属性*/
+    outline: none;/*清除选中状态*/
+    padding-left:10px;/*内填充-左*/
+}
+.search-logo{
+    width: 50px;
+    height: 51px;
+    border:1px solid #e0e0e0;/*border边框:边框宽度 边框样式(实线) 边框颜色*/
+    float:right;
+    background: #fff;
+    border-left: 0;    /*左边框*/
+    text-align:center; /*引入的icon图标相当于文字*/
+    line-height:50px;  /*可以通过文字属性来设置icon的颜色，大小等属性。*/
+    cursor:pointer;    /*鼠标移入时变为手*/
+    transition:all 0.5s linear;/*添加动画效果*/
+}
+.search-logo:hover{
+    background: #ff6700;
+}
+.search-logo i{
+    font-size:24px;
+    color:#616161;
+    font-weight: 700;
+}
+.search-logo:hover i{
+    color: #ffffff;
+}
+/*小米首页搜索部分结束*/
+/*小米首页轮播图开始*/
+.banner-box{
+    height: 460px;
+    margin: 0 auto;
+    position: relative;
+}
+.banner-list{
+    width: 234px;
+    height: 100%;
+    background: rgba(0,0,0,0.6);/*r:红色,g:绿色,b:黄,a:调节不透明度*/
+    padding:20px 0;
+    box-sizing: border-box;/*解决盒子撑大的问题,给盒子添加属性*/
+    position: absolute;/*绝对定位*/
+    left: 0;
+    top: 0;
+}
+.banner-item{
+    width: 100%;
+    height: 42px;
+    font-size: 14px;
+    color: #ffffff;
+    line-height: 42px;
+    padding-left: 30px;
+    box-sizing: border-box;/*解决盒子撑大的问题,给盒子添加属性*/
+    cursor:pointer;    /*鼠标移入时变为手*/
+    transition:all 0.5s linear;/*添加动画效果*/
+}
+.banner-item i{/*设置引入icon图标*/
+    float: right;
+    margin-right: 30px;
+    color:rgba(255,255,255,0.5);
+    cursor:pointer;    /*鼠标移入时变为手*/
+    transition:all 0.5s linear;/*添加动画效果*/
+}
+.banner-item:hover{
+    background: #ff6700;
+}
+/*轮播图*/
+.banner-img{
+    width: 100%;
+    height: 100%;
+    background: #00a5c4;
+}
+.banner-img img{
+    width: 100%;
+}
+.btn-left{/*轮播左箭头*/
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    left: 234px;
+    top:195px;
+    /*背景图片*/
+    background-image: url("../img/icon-slides.png");
+    background-position: 83px 0;
+}
+.btn-left:hover{/*轮播左箭头移入时，变暗*/
+    background-image: url("../img/icon-slides.png");
+    background-position: 0 0;
+}
+.btn-right{/*轮播右箭头*/
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    right:0;
+    top:195px;
+    background-image: url("../img/icon-slides.png");/*引入图片*/
+    background-position: 42px 0;                    /*图片移动*/
+}
+.btn-right:hover{/*轮播右箭头移入时，变暗*/
+    background-image: url("../img/icon-slides.png");
+    background-position: -42px 0;
+}
+.dots{
+    width: 100px;
+    height: 10px;
+    position: absolute;/*绝对定位*/
+    right:20px;        /*绝对定位*/
+    bottom: 10px;      /*绝对定位*/
+}
+.dot{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;/*圆角*/
+    background: #fff;
+    float: left;
+    margin: 0 5px;
+}
+.hover{/*鼠标移入时轮播点为选中状态*/
+    background: #00a5c4;/*选中状态，背景颜色*/
+}
+/*小米首页轮播图结束*/
+/*小米闪购开始*/
+.flash-box{
+    height: 438px;
+    margin: 0 auto;/*水平居中*/
+    margin-top: 50px;
+}
+.flash-title{
+    width: 100%;
+    height: 58px;
+    position: relative;/*相对定位*/
+}
+.flash-title h3{
+    color: #333333;
+    font-size: 22px;
+    font-weight: 200;
+    line-height: 58px;
+    font-family: "Sitka Text";
+}
+.btn{
+    width: 70px;
+    height: 25px;
+    position: absolute;/*绝对定位*/
+    right: 0;
+    top: 16px;
+}
+.prev{
+    width: 35px;
+    height: 100%;
+    border: 1px solid rgb(244,244,244);
+    box-sizing: border-box;
+    float: left;
+    border-right: 0;
+    text-align: center;
+}
+.next{
+    width: 35px;
+    height: 100%;
+    border: 1px solid rgb(244,244,244);
+    box-sizing: border-box;
+    float:right;
+    text-align: center;
+}
+.flash-bd{
+    width: 100%;
+    height: 340px;
+}
+.flash-first{
+    width: 234px;
+    height: 100%;
+    background: #f1eded;
+    border-top:1px solid #e53935;
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 54px;
+    float: left;
+}
+.flash-first h3{
+    color: #ef3a3b;
+    font-size: 21px;
+    font-weight: 400;
+}
+.flash-first img{
+    margin: 25px auto;
+}
+.flash-first p{
+    color:#333333;
+    font-size: 16px;
+}
+.time-box{
+    width: 168px;
+    height: 46px;
+    margin: 28px auto 0;
+}
+.time{
+    width: 46px;
+    height: 46px;
+    background: #605751;
+    color: #ffffff;
+    text-align: center;
+    line-height: 46px;
+    float: left;
+}
+.dian{
+    width: 15px;
+    color: #605751;
+    font-size: 28px;
+    line-height: 46px;
+    float: left;
+}
+.flash-shop{
+    width: 992px;
+    height: 100%;
+    float: right;
+}
+.flash-shop-item {
+    width: 234px;
+    height: 100%;
+    background: #ffffff;
+    padding-top: 39px;
+    box-sizing: border-box;
+    border-top: 1px solid #ffac13;
+    margin-left: 14px;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+.one{
+    border-top: 1px solid #83c44e;
+}
+.tow{
+    border-top: 1px solid #2196f3;
+}
+.three{
+    border-top: 1px solid #e53935;
+}
+.flash-shop-item img{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 22px;
+}
+.flash-shop-item h3{
+    color: #212121;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 20px 3px;/*自动留白20px*/
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.zhezhao{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.02);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.desc{
+    font-size:12px;
+    color: #b0b0b0;
+    margin: 0 20px 12px;
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.price{
+    font-size: 14px;
+    color: #ff6709;
+}
+.price s{
+    color: #e53935;
+}
+/*小米闪购结束*/
+.box{
+    width:100%;
+    /*height:100%;*/
+    background: #eeeeee;
+    margin:20px 0 10px;
+    padding-bottom:50px;
+}
+/*小米手机部分开始*/
+.phone-box{
+    height: 686px;
+    margin: 0 auto;
+}
+.phone-title{
+    width: 100%;
+    height: 58px;
+}
+.phone-title h{
+    color:#212121;
+    font-size:24px;
+    line-height:58px;
+    font-weight:300;
+}
+.phone-title a{
+    color:#212121;
+    font-size:16px;
+    line-height:58px;
+    float:right;
+}
+.phone-title:hover a{
+    color: #ff6700;
+}
+.phone-title i{
+    width: 20px;
+    height: 20px;
+    line-height:58px;
+    float: right;
+}
+.video-title:hover i{
+    color: #ff6700;
+}
+.phone-bd{
+    width: 100%;
+    height: 628px;
+}
+.phone-bd-special{
+    width: 234px;
+    height: 614px;
+    float: left;
+    position:relative;
+    top:0;
+    transition: all 0.5s;
+}
+.phone-bd-special:hover{
+    box-shadow:0 3px 15px #b0b0b0;
+    top:-3px;
+}
+.phone-bd-special img{
+    width: 234px;
+}
+.phone-bd-list{
+    width: 992px;
+    height: 614px;
+    float: right;
+}
+.brick-item{
+    width: 234px;
+    height: 300px;
+    background: #ffffff;
+    margin-left: 14px;
+    margin-bottom: 14px;
+    text-align: center;
+    float:left;
+    position: relative;
+    top:0;
+    transition:all 0.5s;
+}
+.brick-item:hover{
+    box-shadow:0 3px 15px #b0b0b0;
+    top:-3px;
+}
+.brick-item-new{
+    width: 60px;
+    height: 20px;
+    background: #83c44e;
+    font-size: 14px;
+    color: #ffffff;
+    text-align:center;
+    margin: 0 auto;
+}
+.brick-item-img{
+    width:160px;
+    height:160px;
+    margin:0 auto;
+}
+.brick-item-img img{
+    width: 160px;
+    height: 100%;
+}
+.brick-item h3{
+    font-size: 14px;
+    font-weight:400;
+    text-align: center;
+    margin: 5px 0;
+}
+.brick-item p{
+    font-size:12px;
+    color: #b0b0b0;
+    margin: 5px 20px 12px;
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.brick-item span{
+    font-size: 14px;
+    color: #ff6709;
+}
+.brick-item s{
+    font-size: 14px;
+    color: #616161;
+}
+/*小米手机部分结束*/
+/*小米手机家电部分开始*/
+.electrical-box{
+    height: 686px;
+    margin:20px auto;
+}
+.electrical-title{
+    width:100%;
+    height:58px;
+}
+.electrical-title h{
+    color:#212121;
+    font-size:24px;
+    line-height:58px;
+    font-weight:300;
+}
+.electrical-title a{
+    color:#212121;
+    font-size:14px;
+    line-height:25px;
+    float:right;
+    margin-left:20px;
+}
+.electrical-title a:hover{
+    color:#ff6700;
+    border-bottom:2px solid #ff6700;
+}
+.electrical-bd{
+    width:100%;
+    height:628px;
+}
+.electrical-bd-list{
+    width:100%;
+    height:614px;
+    float:left;
+}
+.electrical-bd-one{
+    width:234px;
+    height:300px;
+    background:#ffffff;
+    margin-bottom: 14px;
+    text-align: center;
+    float:left;
+    position:relative;
+    top:0;
+    transition:all 0.5s;
+}
+.electrical-bd-one:hover{
+    top:-3px;
+    box-shadow:0 3px 15px #b0b0b0;
+}
+.electrical-bd-one img{
+    width:234px;
+    height:100%;
+}
+.electrical-bd-two{
+    width:234px;
+    height:300px;
+    background:#ffffff;
+    margin-left:14px;
+    margin-bottom: 14px;
+    text-align: center;
+    cursor:pointer;/*将鼠标移入的样式改变，变改成手*/
+    float:left;
+    position:relative;
+    top:0;
+    transition: all 0.5s;
+}
+.electrical-bd-two:hover{
+    top:-3px;
+    box-shadow: 0 3px 15px #b0b0b0;
+}
+#brick{
+    width:234px;
+    height:300px;
+
+}
+/*上滑开始*/
+.electrical-detail{
+    width:234px;
+    height:0;
+    background: #ff6700;
+    position:absolute;
+    left:0;
+    bottom:0;
+    padding:10px 30px;
+    box-sizing: border-box;
+    /*overflow: hidden;*/
+    opacity: 0;   /*不透明*/
+    transition: all 0.5s;
+}
+.electrical-bd-two:hover .electrical-detail{
+    opacity: 1;
+    height: 100px;
+    display:block;
+}
+.electrical-detail>a{
+    width:200px;
+}
+.electrical-detail>a>span{
+    color:#fff;
+    z-index: 999;
+    font-size:12px;
+    overflow: hidden;
+
+}
+#author{
+    display:block;
+    color:rgba(255,255,255,0.5);
+}
+/*上滑结束*/
+.electrical-bd-two h3{
+    font-size: 14px;
+    font-weight:400;
+    text-align: center;
+    margin: 5px 0;
+}
+.electrical-bd-two p{
+    font-size:12px;
+    color: #b0b0b0;
+    margin: 5px 20px 12px;
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.electrical-bd-two span{
+    font-size: 14px;
+    color: #ff6709;
+}
+.electrical-bd-two s{
+    font-size: 14px;
+    color: #616161;
+}
+.electrical-bd-three{
+    width:234px;
+    height:143px;
+    background:#ffffff;
+    float:left;
+    margin-left: 14px;
+    margin-bottom:14px;
+    padding:30px 25px 14px 30px;
+    box-sizing: border-box;
+}
+.three-one{
+    width:80px;
+    height:80px;
+    background: #ffffff;
+    float:right;
+   /* margin-right:14px;
+    margin-top:31px;*/
+}
+.three-one i{
+    font-size:50px;
+    color:#ff6700;
+}
+.three-one img{
+    width:80px;
+    height:100%;
+}
+.electrical-bd-three a{
+    display:block;
+    color:#333;
+    font-size:14px;
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    margin-top:15px;
+  /*  margin-top:36px;
+    margin-left:25px;*/
+}
+.electrical-bd-three span{
+    color: #ff6700;
+    font-size:12px;
+    line-height:20px;
+    /*margin-left:25px;*/
+}
+/*小米手机家电部分结束*/
+/*小米首页为你推荐开始*/
+.recommend-bd{
+    width: 100%;
+    height: 340px;
+}
+.recommend-shop-item{
+    width: 234px;
+    height: 100%;
+    background: #ffffff;
+    padding-top: 39px;
+    box-sizing: border-box;
+    border-top: 1px solid #ffac13;
+    text-align: center;
+    position: relative;
+    float: left;
+}
+.recommend-shop-item img{
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 22px;
+}
+.recommend-shop-item h3{
+    color: #212121;
+    font-size: 14px;
+    line-height:25px;
+    font-weight: 400;
+    margin: 0 20px 3px;/*自动留白20px*/
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*小米首页为你推荐结束*/
+/*小米首页热评产品部分开始*/
+.hot-bd-item{
+    width:296px;
+    height:380px;
+    background:#fff;
+    text-align:center;
+    position:relative;
+    float:left;
+    margin-right:14px;
+    box-sizing: border-box;
+    margin-bottom:10px;
+}
+.hot-bd-img{
+    width:296px;
+    height:220px;
+}
+.hot-bd-img img{
+    width:296px;
+    height:100%;
+}
+.hot-bd-cont{
+    width: 240px;
+    height:70px;
+    margin:27px 27px 0;
+}
+.hot-bd-cont p{
+    font-size:14px;
+    color:#333;
+    line-height:20px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;//盒子溢出隐藏
+    box-sizing: border-box;
+}
+.hot-bd-item span{
+    display:block;
+    height:18px;
+    line-height:27px;
+    color:#b0b0b0;
+    font-size:14px;
+    text-align:left;
+    margin-left:27px;
+}
+.p{
+    line-height:27px;
+    text-align: left;
+    font-size:14px;
+    margin-left:27px;
+    display:flex;
+
+    /*margin-top:10px;*/
+}
+.p span{
+    color:#ff6700;
+}
+/*小米首页热评产品部分结束*/
+/*小米首页内容部分开始*/
+.content-box{
+    height:450px;
+    margin:0 auto;
+}
+.content-title{
+    width:100%;
+    height:58px;
+}
+.content-title h{
+    color:#212121;
+    font-size:24px;
+    line-height:58px;
+    font-weight:300;
+}
+.content-bd{
+    width:100%;
+    height:374px;
+
+}
+.content-bd-item{
+    width:296px;
+    height:374px;
+    background:#fff;
+    border-top:1px solid #ff6700;
+    padding:45px 0;
+    text-align:center;
+    position:relative;
+    float:left;
+    margin-right:14px;
+    box-sizing: border-box;
+}
+.desc-one {
+    font-size:12px;
+    color: #b0b0b0;
+    margin: 0 20px 12px;
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    /*white-space: nowrap;*/
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.o{
+    margin-right:-14px;
+}
+.content-bd-item h3{
+    color:#ffac13;
+    font-size: 16px;
+    font-weight:400;
+    text-align:center;
+    margin:0 10px 18px;
+}
+.content-bd-item h4{
+    color:#333;
+    font-weight:400;
+    white-space:nowrap;
+    overflow:hidden;
+    outline:none;
+}
+.c-price{
+    color:#333;
+}
+.content-bd-img{
+    width: 216px;
+    height: 154px;
+    margin:10px auto 0;
+}
+.content-dots-one{
+    width:296px;
+    height:30px;
+    padding-left:125px;
+    box-sizing: border-box;
+
+}
+.content-dots{
+    width:296px;
+    height:30px;
+    padding-left:118px;
+    /*margin-bottom:20px;*/
+    margin:20px auto;
+    box-sizing: border-box;
+}
+.c-dot{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;/*圆角*/
+    float: left;
+    margin: 0 5px;
+    background: #616161;
+}
+.c-dot:hover{
+    border-radius: 50%;/*圆角*/
+    background: #ff6709;
+    float: left;
+}
+.no{/*鼠标移入时轮播点为选中状态*/
+    background: #ff6709;
+
+   /* background: #ff6709;!*选中状态，背景颜色*!*/
+}
+.c-btn-left{/*轮播左箭头*/
+    /*width: 26px;*/
+    /*height: 48px;*/
+    position: absolute;
+    left: 0;
+    top:160px;
+    /*背景图片*/
+}
+.c-btn-left i{
+    font-size:30px;
+    color:#b0b0b0;
+    margin-left:0;
+}
+.c-btn-left i:hover{/*轮播左箭头移入时，变暗*/
+    color:#605751;
+}
+.c-btn-right{/*轮播左箭头*/
+    /*width: 28px;*/
+    /*height: 48px;*/
+    position: absolute;
+    right:0;
+    top:160px;
+}
+.c-btn-right i{
+    font-size:30px;
+    color:#b0b0b0;
+}
+.c-btn-right i:hover{/*轮播左箭头移入时，变暗*/
+    color:#605751;
+}
+/*小米首页内容部分结束*/
+
+/*小米首页视频部分开始*/
+.video-box{
+    height:350px;
+    margin:0 auto;
+}
+.video-title{
+    width:100%;
+    height:58px;
+}
+.video-title h{
+    color:#212121;
+    font-size:24px;
+    line-height:58px;
+    font-weight:300;
+}
+.video-title a{
+    color:#212121;
+    font-size:16px;
+    line-height:58px;
+    float:right;
+}
+.video-title:hover a{
+    color: #ff6700;
+}
+.video-title i{
+    width: 20px;
+    height: 20px;
+    line-height:58px;
+    float: right;
+}
+.video-title:hover i{
+    color: #ff6700;
+}
+.video-bd{
+    width:100%;
+    height:285px;
+    margin-bottom:20px;
+}
+.video-bd-item{
+    width:296px;
+    height:285px;
+    float:left;
+    cursor: pointer;
+    text-align:center;
+    background:#fff;
+    margin-right:14px;
+}
+.t{
+    margin-right:-14px;
+}
+.video-bd-item-video{
+    width:296px;
+    height:180px;
+    float:left;
+    position: relative;
+}
+.video-bd-item-video img{
+    width:296px;
+    height:100%;
+}
+.bofan{
+    width:32px;
+    height:20px;
+    background:red;
+    position: absolute;
+    left:20px;
+    bottom:10px;
+    border:2px solid #fff;
+    border-radius:12px;
+    background-color:rgba(0,0,0,0.6);
+}
+.video-bd-item-video:hover .bofan{
+    background: #ff6700;
+    border:2px solid #ff6700;
+}
+.bofan i{
+    color:#fff;
+    font-size:12px;
+    line-height: 12px;
+    text-align: center;
+    margin-bottom:15px;
+
+
+}
+.video-bd-item-content{
+    width:296px;
+    height:80px;
+    /*background:#333;*/
+    float:left;
+}
+.video-bd-item-content h3{
+    font-size: 12px;
+    font-weight:400;
+    text-align: center;
+    margin-top: 20px;
+}
+.video-bd-item-content p{
+    font-size:12px;
+    color: #b0b0b0;
+    margin: 5px 20px 12px;
+    overflow: hidden;/*当行文本超出部分省略号表示*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*小米首页视频部分结束*/
+/*小米底部开始*/
+.footer-box{
+    width: 100%;
+    height:272px;
+}
+.footer-service{
+    width: 1226px;
+    height: 80px;
+    margin: 0 auto;
+    border-bottom:1px solid #b0b0b0;
+}
+.footer-nav{
+    margin: 0 45px;
+    font-size: 17px;
+    line-height: 80px;
+    cursor:pointer;    /*鼠标移入时变为手*/
+}
+.footer-nav i{
+    font-size:24px;
+    color:#616161;
+    font-weight: 700;
+}
+.footer-nav a{
+    color: #333;
+}
+.footer-nav span{
+    color: #b0b0b0;
+    margin: 0 47px;
+}
+.footer-nav a:hover {
+    color: #ff6700;
+}
+.footer-item{
+    width: 1226px;
+    height: 192px;
+  /*  background: #e53935;*/
+    margin: 0 auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+.item-main{
+    width: 1226px;
+    height: 112px;
+}
+.item-one{
+    width: 160px;
+    height: 112px;
+    float: left;
+}
+.item-title{
+    height: 40px;
+    font-size: 16px;
+    color:#333333;
+}
+.item-main a{
+    width: 160px;
+    height: 20px;
+    color: #616161;
+    font-size: 14px;
+    padding-top: 4px;
+    float: left;
+    cursor:pointer;    /*鼠标移入时变为手*/
+    transition:all 0.5s linear;/*添加动画效果*/
+}
+.item-main a:hover {
+    color: #ff6700;
+}
+.border{
+    border-right: 1px solid #b0b0b0;
+}
+.item-two{
+    width: 215px;
+    height: 112px;
+    float:right;
+    position: relative;
+}
+.item-phone{
+    width: 100%;
+    height: 25px;
+    font-size: 23px;
+    color: #ff6700;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+.week{
+    width: 100%;
+    height: 57px;
+    font-size: 12px;
+    color: #333333;
+    position: absolute;
+    top:30px;
+    left: 40px;
+    margin: 0 auto;
+}
+.b{
+    position: absolute;
+    top:19px;
+    left: 25px;
+    margin: 0 auto;
+}
+.item-contact{
+    width: 120px;
+    height: 28px;
+    border: 1px solid #ff6700;
+    position: absolute;
+    top:72px;
+    left: 42px;
+    margin: 0 auto;
+    cursor:pointer;    /*鼠标移入时变为手*/
+    transition:all 0.5s linear;/*添加动画效果*/
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 28px;
+    float: left;
+}
+.item-contact i{
+    margin: 0 2px 0 24px;
+    color: #ff6700;
+    float: left;
+}
+.item-contact p{
+    color: #ff6700;
+    font-size: 14px;
+    float: left;
+}
+.item-contact:hover{
+    background: #ff6700;
+}
+.item-contact:hover p{
+    color: #ffffff;
+}
+.item-contact:hover i{
+    color: #ffffff;
+}
+/*小米底部结束*/
+/*小米首页底部开始*/
+.info-box{
+    width: 100%;
+    height: 180px;
+}
+.info-item{
+    width: 1226px;
+    height: 92px;
+    margin: 0 auto;
+}
+.info-logo {
+    width: 57px;
+    height: 57px;
+    float: left;
+    position: relative;
+}
+.info-logo img{
+    width: 100%;
+    height: 100%;
+}
+.info-main{
+    width:1159px ;
+    height: 92px;
+    float: left;
+    margin-left: 10px;
+}
+.main-one{
+    width: 100%;
+    height: 19px;
+    font-size:12px;
+    line-height:14px;
+    color: #333333;
+    float: left;
+}
+.main-one a{
+    color:#333333;
+}
+.main-one a:hover{
+    color: #ff6700;
+}
+.main-two{
+    width: 100%;
+    height: 73px;
+    margin-top:19px;
+    color: #333333;
+    font-size:12px;
+    line-height:14px;
+    flaot:left;
+}
+.main-two a{
+    color:#616161;
+}
+.main-two a:hover{
+    color: #ff6700;
+}
+.main-two-b{
+    width:100% ;
+    height: 18px;
+    float: left;
+}
+.info-img{
+    width: 1226px;
+    height: 30px;
+    margin-left: 62px;
+}
+.info-img img{
+    height: 28px;
+    float:left;
+}
+/*小米首页底部结束*/
